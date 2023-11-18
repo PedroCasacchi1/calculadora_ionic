@@ -1,20 +1,79 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid id="container">
+    <h3>{{memoria}}</h3>
+    <h1>{{resultado}}</h1>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-row>
+      <ion-col size="3">
+        <ion-button (click)="resetar()" color="dark">C</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="digitos('3.14')" color="dark">π</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="operadores('√')" color="dark">√</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="operadores('/')">/</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="3">
+        <ion-button (click)="digitos('7')" color="light">7</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="digitos('8')" color="light">8</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="digitos('9')" color="light">9</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="operadores('+')">+</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="3">
+        <ion-button (click)="digitos('4')" color="light">4</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="digitos('5')" color="light">5</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="digitos('6')" color="light">6</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="operadores('-')">-</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="3">
+        <ion-button (click)="digitos('1')" color="light">1</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="digitos('2')" color="light">2</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="digitos('3')" color="light">3</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="operadores('*')">x</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6">
+        <ion-button (click)="digitos('0')" color="light" class="botaomaior">0</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="digitos(',')" color="light">,</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="calcular()">=</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 </ion-content>
