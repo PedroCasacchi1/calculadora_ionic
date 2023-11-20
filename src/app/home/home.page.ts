@@ -16,8 +16,7 @@ export class HomePage {
   segundo_elemento: string = "";
   operador: string = "";
   is_novo_calculo: boolean = false;
-
-
+ 
   constructor() { }
 
   digitos(valor: string) {
@@ -63,28 +62,39 @@ export class HomePage {
   calcular() {
 
     if (this.operador == "+" && this.segundo_elemento != "") {
-      this.resultado = (parseInt(this.primeiro_elemento) + parseInt(this.segundo_elemento)).toString();
+      this.resultado = (parseFloat(this.primeiro_elemento) + parseFloat(this.segundo_elemento)).toString();
       this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + "=" + this.resultado;
       this.is_novo_calculo = true;
     } else if (this.operador == "-" && this.segundo_elemento != "") {
-      this.resultado = (parseInt(this.primeiro_elemento) - parseInt(this.segundo_elemento)).toString();
+      this.resultado = (parseFloat(this.primeiro_elemento) - parseFloat(this.segundo_elemento)).toString();
       this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + "=" + this.resultado;
       this.is_novo_calculo = true;
     } else if (this.operador == "*" && this.segundo_elemento != "") {
-      this.resultado = (parseInt(this.primeiro_elemento) * parseInt(this.segundo_elemento)).toString();
+      this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)).toString();
       this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + "=" + this.resultado;
       this.is_novo_calculo = true;
     } else if (this.operador == "/" && this.segundo_elemento != "") {
-      this.resultado = (parseInt(this.primeiro_elemento) / parseInt(this.segundo_elemento)).toString();
+      this.resultado = (parseFloat(this.primeiro_elemento) / parseFloat(this.segundo_elemento)).toString();
       this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + "=" + this.resultado;
       this.is_novo_calculo = true;
     } else if (this.operador == "√"){
-        this.resultado = (Math. sqrt(parseInt(this.primeiro_elemento))) .toString();
+        this.resultado = (Math. sqrt(parseFloat(this.primeiro_elemento))) .toString();
     }else {
       if (this.operador == "") {
         alert("Nenhum operador foi selecionado.")
       } else {
         alert("O segundo elemento não foi definido.")
+      }
+    }
+  }
+
+  backspace() {
+    if (this.resultado.length > 0) {
+      this.resultado = this.resultado.slice(0, -1);
+      if (this.resultado.endsWith('+') || this.resultado.endsWith('-') || this.resultado.endsWith('*') || this.resultado.endsWith('/')) {
+        this.operador_inserido = false;
+        this.is_segundo_elemento = false;
+        this.operador = '';
       }
     }
   }
