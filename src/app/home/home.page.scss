@@ -12,7 +12,6 @@
   justify-content: center;
 }
 
-
 #container strong {
   font-size: 20px;
   line-height: 26px;
@@ -32,10 +31,19 @@
   text-decoration: none;
 }
 
-h1, h3 {
+// mostra o resultado
+h1 {
   text-align: right;
-  padding-right: 8%;
+  padding-right: 8.5%;
   font-size: 38px;
+  color: rgb(255, 255, 255);
+}
+
+// mostra a conta depois de realizada (em cima do resultado)
+h3 {
+  text-align: right;
+  padding-right: 8.5%;
+  font-size: 20px;
   color: rgb(255, 255, 255);
 }
 
