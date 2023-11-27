@@ -59,49 +59,49 @@ export class HomePage {
       this.is_segundo_elemento = true;
     }
   }
-
   calcular() {
-
+  if (this.is_novo_calculo) {
+    this.resetar();
+    this.primeiro_elemento = this.resultado;
+    this.resultado += this.operador;
+    this.operador_inserido = true;
+    this.operador = this.operador;
+    this.is_segundo_elemento = true;
+    this.is_novo_calculo = false; // Definindo para falso após usar novo cálculo
+  } else {
     if (this.operador == "+" && this.segundo_elemento != "") {
       this.resultado = (parseFloat(this.primeiro_elemento) + parseFloat(this.segundo_elemento)).toString();
-      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + "=" + this.resultado;
-      this.is_novo_calculo = true;
     } else if (this.operador == "-" && this.segundo_elemento != "") {
       this.resultado = (parseFloat(this.primeiro_elemento) - parseFloat(this.segundo_elemento)).toString();
-      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + "=" + this.resultado;
-      this.is_novo_calculo = true;
     } else if (this.operador == "*" && this.segundo_elemento != "") {
       this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)).toString();
-      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + "=" + this.resultado;
-      this.is_novo_calculo = true;
     } else if (this.operador == "/" && this.segundo_elemento != "") {
       this.resultado = (parseFloat(this.primeiro_elemento) / parseFloat(this.segundo_elemento)).toString();
-      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + "=" + this.resultado;
-      this.is_novo_calculo = true;
-    } else if (this.operador == "√"){
-        this.resultado = (Math. sqrt(parseFloat(this.primeiro_elemento))) .toString();
-    }else if (this.operador == "²"){
-      this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.primeiro_elemento)) .toString();
-      this.memoria = this.primeiro_elemento + this.operador + "=" + this.resultado;
-      this.is_novo_calculo = true;
-    }else if (this.operador == "%"){
+    } else if (this.operador == "√") {
+      this.resultado = (Math.sqrt(parseFloat(this.primeiro_elemento))).toString();
+    } else if (this.operador == "²") {
+      this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.primeiro_elemento)).toString();
+    } else if (this.operador == "%") {
       if (this.segundo_elemento != "") {
         this.resultado = (parseFloat(this.primeiro_elemento) / 100 * parseFloat(this.segundo_elemento)).toString();
-        this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + "=" + this.resultado;
-        this.is_novo_calculo = true;
+      } else {
+        this.resultado = (parseFloat(this.primeiro_elemento) / 100).toString();
+      }
     } else {
-      this.resultado = (parseFloat(this.primeiro_elemento) / 100).toString();
-      this.memoria = this.primeiro_elemento + this.operador +  "=" + this.resultado;
-      this.is_novo_calculo = true;
-    } 
-  } else {
       if (this.operador == "") {
         alert("Nenhum operador foi selecionado.")
       } else {
         alert("O segundo elemento não foi definido.")
       }
     }
+    this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + "=" + this.resultado;
+    this.primeiro_elemento = this.resultado;
+    this.operador_inserido = false;
+    this.is_segundo_elemento = false;
+    this.segundo_elemento = "";
   }
+}
+
 
   backspace() {
     if (this.resultado.length > 0) {
