@@ -16,7 +16,8 @@ export class HomePage {
   segundo_elemento: string = "";
   operador: string = "";
   is_novo_calculo: boolean = false;
- 
+
+  
   constructor() { }
 
   digitos(valor: string) {
@@ -79,7 +80,21 @@ export class HomePage {
       this.is_novo_calculo = true;
     } else if (this.operador == "√"){
         this.resultado = (Math. sqrt(parseFloat(this.primeiro_elemento))) .toString();
-    }else {
+    }else if (this.operador == "²"){
+      this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.primeiro_elemento)) .toString();
+      this.memoria = this.primeiro_elemento + this.operador + "=" + this.resultado;
+      this.is_novo_calculo = true;
+    }else if (this.operador == "%"){
+      if (this.segundo_elemento != "") {
+        this.resultado = (parseFloat(this.primeiro_elemento) / 100 * parseFloat(this.segundo_elemento)).toString();
+        this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + "=" + this.resultado;
+        this.is_novo_calculo = true;
+    } else {
+      this.resultado = (parseFloat(this.primeiro_elemento) / 100).toString();
+      this.memoria = this.primeiro_elemento + this.operador +  "=" + this.resultado;
+      this.is_novo_calculo = true;
+    } 
+  } else {
       if (this.operador == "") {
         alert("Nenhum operador foi selecionado.")
       } else {
