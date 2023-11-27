@@ -4,80 +4,83 @@
     <h1>{{resultado}}</h1>
 
     <ion-row>
-      <ion-col size="21">
+      <ion-col size="21"> 
         <ion-button (click)="backspace()" color="black">⌫</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="resetar()" color="light">C</ion-button>
       </ion-col>
-      <ion-col size="3">
-        <ion-button (click)="digitos('3.14')" color="light">π</ion-button>
+      <ion-col >
+        <ion-button (click)="operadores('%')" color="light">%</ion-button>
       </ion-col>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="operadores('√')" color="light">√</ion-button>
       </ion-col>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="operadores('/')">/</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="digitos('7')" color="dark">7</ion-button>
       </ion-col>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="digitos('8')" color="dark">8</ion-button>
       </ion-col>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="digitos('9')" color="dark">9</ion-button>
       </ion-col>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="operadores('+')">+</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="digitos('4')" color="dark">4</ion-button>
       </ion-col>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="digitos('5')" color="dark">5</ion-button>
       </ion-col>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="digitos('6')" color="dark">6</ion-button>
       </ion-col>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="operadores('-')">-</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="digitos('1')" color="dark">1</ion-button>
       </ion-col>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="digitos('2')" color="dark">2</ion-button>
       </ion-col>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="digitos('3')" color="dark">3</ion-button>
       </ion-col>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="operadores('*')">x</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col size="6">
-        <ion-button (click)="digitos('0')" color="dark" class="botaomaior">0</ion-button>
-      </ion-col>
-      <ion-col size="3">
+      <ion-col >
         <ion-button (click)="digitos('.')" color="dark">.</ion-button>
       </ion-col>
-      <ion-col size="3">
-        <ion-button (click)="calcular()">=</ion-button>
+      <ion-col >
+        <ion-button (click)="digitos('0')" color="dark" >0</ion-button>
+      </ion-col>
+      <ion-col >
+        <ion-button (click)="operadores('²')" color="dark">x²</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="calcular()" >=</ion-button>
       </ion-col>
     </ion-row>
 
